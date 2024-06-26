@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/notificacao.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGMTgreen/notificacoes</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .noti {
+            padding: 20px;
+        }
+        .message {
+            background-color: #f44336;
+            color: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="cabecalho">
+            <div class="sigla">
+                <h2>BGMT green</h2>
+            </div>
+            <div class="menu">
+                <a href="/Pages/clientes.html">
+                    Clientes
+                </a>
+                <a href="/Pages/criarclientes.html">
+                    Criar Clientes
+                </a>
+                <a id="emailLink" href="#" onclick="">
+                    Suporte
+                </a>
+                <a class="config" href="/Pages/notificacao.html" onclick="">
+                    <img src="/IMG/notif.svg" alt="Notificacao">
+                </a>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="noti">
+            <h1>Notificações de Coleta</h1>
+            <div id="messages"></div>
+        </div>
+    </section>
+
+    <script>
+        const channelID = '2580885'; // Substitua pelo seu Channel ID
+        const results = 1; // Número de resultados a serem retornados
+        let lastEntryID = 0;
+
+        function fetchData() {
+            fetch(`https://api.thingspeak.com/channels/${channelID}/feeds.json?results=${results}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.feeds.length > 0) {
+                        const latestFeed = data.feeds[0];
+                        if (latestFeed.entry_id != lastEntryID) {
+                            lastEntryID = latestFeed.entry_id;
+                            const messageContainer = document.getElementById('messages');
+                            const message = document.createElement('div');
+                            message.className = 'message';
+                            message.innerText = 'Lixeira cheia';
+                            messageContainer.appendChild(message);
+                        }
+                    }
+                })
+                .catch(error => console.error('Erro ao buscar dados:', error));
+        }
+
+        // Atualiza os dados a cada 15 segundos
+        setInterval(fetchData, 5000);
+
+        // Busca dados ao carregar a página
+        window.onload = fetchData;
+
+        var emailLink = document.getElementById("emailLink");
+        var destinatario = "BGMTgreen@gmail.com";
+
+        emailLink.addEventListener("click", function () {
+            var link = "mailto:" + destinatario;
+            window.location.href = link;
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/clientes.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGMTgreen/clientes</title>
+</head>
+
+<body>
+    <header>
+        <div class="cabecalho">
+            <div class="sigla">
+                <h2>BGMT green</h2>
+            </div>
+            <div class="menu">
+                <a href="/Pages/clientes.html">
+                    Clientes
+                </a>
+                <a href="/Pages/criarclientes.html">
+                    Criar Clientes
+                </a>
+                <a id="emailLink" href="#" onclick="">
+                    Suporte
+                </a>
+                <a class="config" href="/Pages/notificacao.html" onclick="">
+                    <img src="/IMG/notif.svg" alt="Notificacao">
+                </a>
+            </div>
+        </div>
+    </header>
+    <br>
+    <h1>Todos os Clientes</h1>
+    <br>
+    <section class="tab">
+        <div>
+            <input type="text" id="bar" placeholder="Pesquisar Clientes...">
+            <button type="submit" class="search">
+                <a>
+                    <img src="/IMG/pesqui.svg" alt="Icon Search">
+                </a>
+            </button>
+        </div>
+        <br>
+        <div>
+            <button type="submit" class="search2">
+                <a href="/Pages/criarclientes.html" onclick="">
+                    <img src="/IMG/add.svg" alt="icon add">
+                </a>
+            </button>
+        </div>
+        <br>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome Fantasia</th>
+                    <th>CPF /CNPJ</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>Telefone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-title="ID">1000</td>
+                    <td data-title="Nome Fantasia">Teste01</td>
+                    <td data-title="CPF /CNPJ">00.000.000/0001-63</td>
+                    <td data-title="Cidade">Cuiabá</td>
+                    <td data-title="Estado">Mato Grosso</td>
+                    <td data-title="Telefone">(65)9 9876-5432</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <script>
+        var emailLink = document.getElementById("emailLink");
+        var destinatario = "BGMTgreen@gmail.com";
+
+        emailLink.addEventListener("click", function () {
+        var link = "mailto:" + destinatario;
+        window.location.href = link;
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header {
+    background-color: white;
+    padding: 20px 0;
+    border-bottom: 1px solid #006400;
+}
+
+.sigla {
+    color: #0a3b0a;
+}
+
+.sigla h2 {
+    font-weight: normal;
+    font-size: 22px;
+}
+
+.menu {
+    width: 80%;
+    text-align: right;
+}
+
+.menu a {
+    color: #808080;
+    font-size: 18px;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: 0.5s;
+}
+
+.menu a:hover {
+    color: #006400;
+}
+
+.config img {
+    width: 20px;
+}
+
+.table {
+    width: 50%;
+    background-color: #99c199;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1{
+    color: #006400;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 35px;
+}
+
+input {
+    padding: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+    width: 80%;
+}
+
+button{
+    background-color: #006400;
+    padding: 10px;
+    border: none;
+    width: 20%;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #328332;
+}

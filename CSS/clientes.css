@@ -1,0 +1,155 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header {
+    background-color: white;
+    padding: 20px 0;
+    border-bottom: 1px solid #006400;
+}
+
+.sigla {
+    color: #0a3b0a;
+}
+
+.sigla h2 {
+    font-weight: normal;
+    font-size: 22px;
+}
+
+.menu {
+    width: 80%;
+    text-align: right;
+}
+
+.menu a {
+    color: #808080;
+    font-size: 18px;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: 0.5s;
+}
+
+.menu a:hover {
+    color: #006400;
+}
+
+.config img {
+    width: 20px;
+}
+
+h1 {
+    color: #006400;
+    text-align: center;
+    font-size: 35px;
+}
+
+#bar {
+    width: 95%;
+    border-radius: 5px;
+}
+
+.search {
+    position: relative;
+    background: none;
+    cursor: pointer;
+    border: 0;
+}
+
+.search2 {
+    position: relative;
+    background: none;
+    cursor: pointer;
+    float: right;
+    border: 2px;
+}
+
+.tab {
+    text-align: center;
+    width: 80%;
+    height: 550px;
+    margin: 0 auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    font-family: 'poppins', sans-serif;
+    border: 1px solid black;
+    font-size: 11px;
+}
+
+footer {
+    text-align: center;
+    font-size: 13px;
+}
+
+@media screen and (max-width: 1020px) {
+    #bar {
+        width: 90%;
+    }
+
+    .search {
+        float: right;
+        margin-top: 5px;
+        margin-right: 10pxs;
+    }
+
+    .tab {
+        height: 640px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        text-align: center;
+        font-size: 7px;
+    }
+
+    .tab {
+        height: 650px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .config {
+        margin-right: 10px;
+    }
+
+    .config img {
+        width: 20px;
+    }
+
+    .tab {
+        height: 590px;
+        width: 100%;
+    }
+
+    #bar {
+        width: 80%;
+    }
+
+    .search {
+        float: right;
+        margin-top: 5px;
+    }
+
+    th,
+    td {
+        font-size: 9px;
+    }
+}
